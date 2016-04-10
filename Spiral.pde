@@ -3,11 +3,19 @@ public class Spiral {
   Point origin;
   Outline out;
   ArrayList<Line> lines;
-  
   Spiral(Point p, Outline out) {
     this.origin = p;
     this.out = out;
-    lines = ((OutlineSquare) out).getLines();
+    lines = out.getLines();    
+  }
+  
+  Spiral(Point p, Outline out, boolean b){
+    this.origin = p;
+    this.out = out;
+    if(b)
+    lines = out.getLines();    
+    else
+    lines = out.getLines2();
   }
   
   private Line updateLine(int linenum, float stepSizex, float stepSizey){
